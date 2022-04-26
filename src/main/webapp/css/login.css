@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+* {
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	font-family: Arial;
+	background: #f9f9f9;
+	padding: 2%;
+	/* chỉ định kích thước */
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}
+
+/* xác định các cột */
+.column {
+	float: left;
+	text-align: center;
+	height: 100%;
+	width: 50%;
+	box-shadow: 0 0 15px #000000;
+	/* định vị nội dung bên trong theo position */
+	position: relative;
+}
+
+.column_left {
+	background-color: #ffffff;
+	z-index: 2;
+}
+
+.column_right {
+	background-color: #000033;
+	color: #ffffff;
+}
+
+/* nội dung trong cột trái */
+.content_left {
+	position: absolute;
+	/* độ dài 100% khi kéo dãn */
+	width: 100%;
+	top: 15%;
+	padding: 0 15%;
+}
+
+/* nội dung trong cột phải */
+.content_right {
+	position: absolute;
+	width: 100%;
+	top: 30%;
+	padding: 0 15%;
+}
+
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.Remember {
+	float: left;
+	text-align: left;
+}
+
+.forgot {
+	float: right;
+	text-align: right;
+	margin: 1px 0;
+}
+
+input[type=submit] {
+	width: 45%;
+	background-color: #ff3300;
+	color: white;
+	padding: 12px;
+	margin: 15px 20%;
+	border: none;
+	border-radius: 15px;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+input[type=submit]:hover {
+	background-color: #ff5c33;
+}
+
+/* bố cục đáp ứng khi dưới 500px các cột xếp chồng lên nhau */
+@media screen and (max-width: 500px) {
+	.column {
+		float: none;
+		width: 100%;
+		height: auto;
+	}
+	.content_left, .content_right {
+		position: relative;
+		padding: 5%;
+	}
+}
